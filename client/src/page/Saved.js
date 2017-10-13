@@ -1,8 +1,10 @@
 // import dependencies
 import React, {Component} from 'react';
 import '../css/Saved.css';
-import {Container} from '../component/Grid';
+import {Container, Row} from '../component/Grid';
+import { Title } from "../component/Text"
 import {ArticleList} from '../component/Article';
+import {BackBtn} from '../component/Button';
 import API from '../utils/API';
 
 // create saved article component
@@ -31,16 +33,17 @@ class Saved extends Component {
     render(){
         return(
             <Container>
-            {console.log(this.state.articles.length )}
-            {this.state.articles.length > 0 ? 
-                <ArticleList 
-                    page={ "Saved" }
-                    results={ this.state.articles } 
-                    deleteArticle= { this.deleteArticle }
-                /> 
-                    : 
-                "No Saved Article Found"}
-        </Container>
+       
+                {this.state.articles.length > 0 ? 
+                    <ArticleList 
+                        page={ "Saved" }
+                        results={ this.state.articles } 
+                        deleteArticle= { this.deleteArticle }/> 
+                        : 
+                        <Title text="No article saved!"/>}
+
+                <Row> <BackBtn/> </Row>
+            </Container>
         )
     };
 }

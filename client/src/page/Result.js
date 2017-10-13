@@ -1,8 +1,10 @@
 // import dependencies
 import React,{Component} from 'react';
 import '../css/Result.css';
-import {Container} from '../component/Grid';
+import {Container,Row} from '../component/Grid';
 import {ArticleList} from '../component/Article';
+import {Title} from '../component/Text';
+import {BackBtn} from '../component/Button';
 import { connect } from 'react-redux';
 import API from '../utils/API';
 import {Link} from "react-router-dom";
@@ -31,7 +33,7 @@ class Result extends Component {
             date: article.pub_date,
             snippet: article.snippet,
             url: article.web_url,
-            thumbnail: article.multimedia[2].url
+            thumbnail: article.multimedia[2] ? article.multimedia[2].url : "http://www.pixedelic.com/themes/geode/demo/wp-content/uploads/sites/4/2014/04/placeholder4.png"
         }
     
         API.saveArticle(articleInfo)
@@ -61,7 +63,10 @@ class Result extends Component {
                             handleSave={this.handleSave}
                         /> 
                             : 
-                        "No Result Found"}
+                            
+                        <Title text="No Result found!"/>}
+
+                    <Row> <BackBtn/> </Row>
                 </Container>
             </div>
         )

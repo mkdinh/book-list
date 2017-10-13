@@ -22,13 +22,9 @@ function mapStateToProps(state) {
 class Search extends Component{
 
     state = {
-        topic: "food",
+        topic: "",
         start: "",
         end: ""
-    }
-
-    componentDidMount(){
-        console.log(this.props.articles)
     }
 
     handleInput = (ev) => {
@@ -52,11 +48,6 @@ class Search extends Component{
         let queryStr = API.query(this.state);
         console.log(queryStr)
         this.props.dispatch(searchArticles(queryStr))
-    }
-
-    handleReturn = (ev) => {
-        ev.preventDefault();
-        this.props.dispatch()
     }
 
     render(){

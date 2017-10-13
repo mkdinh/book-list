@@ -4,7 +4,8 @@ import React from 'react';
 const style = {
     margin: "auto",
     fontSize: "2rem",
-    fontWeight: "bold"
+    fontWeight: "bold",
+    textAlign: "center"
 }
 
 export const Title = ({text}) => 
