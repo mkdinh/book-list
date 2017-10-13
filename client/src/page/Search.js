@@ -10,12 +10,6 @@ import { connect } from 'react-redux';
 import { searchArticles } from '../utils/Redux/actions';
 import API from '../utils/API';
 
-// @connect(store => {
-//     return{
-//         error: store.search.error
-//     }
-// })
-
 function mapStateToProps(state) {
     return { 
         articles: state.search.articles,

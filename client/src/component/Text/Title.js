@@ -3,7 +3,8 @@ import React from 'react';
 
 const style = {
     margin: "auto",
-    fontSize: "3rem"
+    fontSize: "2rem",
+    fontWeight: "bold"
 }
 
 export const Title = ({text}) => 
