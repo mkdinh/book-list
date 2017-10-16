@@ -13,6 +13,7 @@ export default {
 
     // save article
     saveArticle: (article) => {
+        console.log('hello')
         return axios.post('./api/articles/', article)
     },
 

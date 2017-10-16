@@ -4,7 +4,7 @@ import React from 'react';
 
 const style ={
     margin: "1rem",
-    fontSize: "1rem",
+    fontSize: "2rem",
     padding: "0.5rem 2rem",
 };
 

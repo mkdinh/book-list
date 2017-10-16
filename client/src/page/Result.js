@@ -1,10 +1,8 @@
 // import dependencies
 import React,{Component} from 'react';
 import '../css/Result.css';
-import {Container,Row} from '../component/Grid';
+import {Container} from '../component/Grid';
 import {ArticleList} from '../component/Article';
-import {Title} from '../component/Text';
-import {BackBtn} from '../component/Button';
 import { connect } from 'react-redux';
 import API from '../utils/API';
 import {Link} from "react-router-dom";
@@ -26,14 +24,14 @@ class Result extends Component {
     handleSave = (id) => {
         let article = this.props.results.filter(article => article._id === id);
         article = article[0];
-        
+      
         let articleInfo = {
             headline: article.headline.main,
             byline: article.byline.original,
             date: article.pub_date,
             snippet: article.snippet,
             url: article.web_url,
-            thumbnail: article.multimedia[2] ? article.multimedia[2].url : "http://www.pixedelic.com/themes/geode/demo/wp-content/uploads/sites/4/2014/04/placeholder4.png"
+            thumbnail: article.multimedia[2] ? article.multimedia[2].url : ""
         }
     
         API.saveArticle(articleInfo)
@@ -63,10 +61,7 @@ class Result extends Component {
                             handleSave={this.handleSave}
                         /> 
                             : 
-                            
-                        <Title text="No Result found!"/>}
-
-                    <Row> <BackBtn/> </Row>
+                        "No Result Found"}
                 </Container>
             </div>
         )

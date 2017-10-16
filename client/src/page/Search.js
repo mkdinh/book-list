@@ -10,6 +10,12 @@ import { connect } from 'react-redux';
 import { searchArticles } from '../utils/Redux/actions';
 import API from '../utils/API';
 
+// @connect(store => {
+//     return{
+//         error: store.search.error
+//     }
+// })
+
 function mapStateToProps(state) {
     return { 
         articles: state.search.articles,
@@ -22,9 +28,13 @@ function mapStateToProps(state) {
 class Search extends Component{
 
     state = {
-        topic: "",
+        topic: "food",
         start: "",
         end: ""
+    }
+
+    componentDidMount(){
+        console.log(this.props.articles)
     }
 
     handleInput = (ev) => {
@@ -48,6 +58,11 @@ class Search extends Component{
         let queryStr = API.query(this.state);
         console.log(queryStr)
         this.props.dispatch(searchArticles(queryStr))
+    }
+
+    handleReturn = (ev) => {
+        ev.preventDefault();
+        this.props.dispatch()
     }
 
     render(){

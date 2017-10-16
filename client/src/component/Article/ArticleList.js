@@ -1,6 +1,7 @@
 // import React JSX
 import React from 'react';
 import { ArticleItem } from './ArticleItem';
+import { BackBtn } from '../Button';
 import { Row } from '../Grid';
 
 export const ArticleList = (props) =>
@@ -19,7 +20,7 @@ export const ArticleList = (props) =>
                             url= {article.web_url}
                             key= {article._id}
                             id= {article._id}
-                            thumbnail= {article.multimedia[2] ? `https://static01.nyt.com/${article.multimedia[2].url}` : "http://www.pixedelic.com/themes/geode/demo/wp-content/uploads/sites/4/2014/04/placeholder4.png"}
+                            thumbnail= {article.multimedia[2] ? article.multimedia[2].url : ""}
                             handleSave= {props.handleSave}
                             />
                         )
@@ -44,6 +45,8 @@ export const ArticleList = (props) =>
                     }
 
                 })}
+
+                <Row> <BackBtn/> </Row>
 
             </ul>
 

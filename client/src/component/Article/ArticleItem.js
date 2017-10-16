@@ -33,7 +33,7 @@ class ArticleItem extends Component{
                 <div className="card-block">
                 <Row>
                     <Col size={2}>
-                        <img style= {{width: '75%'}} src={this.props.thumbnail} alt='thumbnail'/>
+                        <img style= {{width: '75%'}} src={`https://static01.nyt.com/${this.props.thumbnail}`} alt='thumbnail'/>
                     </Col>
                     <Col size={10}>
                         <p className="article-info"> {this.props.byline} </p>

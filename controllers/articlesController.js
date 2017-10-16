@@ -18,6 +18,7 @@ module.exports = {
   },
 
   create: function(req, res) {
+    console.log(req)
     db.Article
       .create(req.body)
       .then(dbModel => {

@@ -5,21 +5,21 @@
 .remove{
     float: right;
     color: red;
-    font-size: 1rem;
+    font-size: 1.5rem;
 }
 
 .redirect-saved{
     float: right;
     color: green;
-    font-size: 1.25rem;
+    font-size: 1.75rem;
     text-decoration: none
 }
 
 .headline{
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: bold;
 }
 
 .article-info{
-    font-size: 1rem;
+    font-size: 1.2rem;
 }

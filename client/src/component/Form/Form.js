@@ -31,7 +31,8 @@ class Form extends Component{
                     />
                 </Row>
                 <Row>
-                    <SearchBtn type='primary' handleSubmit={this.props.handleSubmit}>Search</SearchBtn>
+                    <SearchBtn type='primary' url={"/result"} handleSubmit={this.props.handleSubmit}>Search</SearchBtn>
+                    <SearchBtn url={"/saved"} type='success'>Saved</SearchBtn>
                 </Row>
             </form>
         )
